@@ -1,24 +1,20 @@
-// UjiPengguna.java
-public class UjiPengguna {
+class UjiPengguna {
     public static void main(String[] args) {
-        // Membuat objek pengguna
-        Pengguna p = new Pengguna(25, 60.0, 170.0);
+        // Objek Pengguna
+        Pengguna p = new Pengguna();
 
-        // Menampilkan semua informasi pengguna
+        // Isi data sesuai data uji coba
+        p.umur = 25;
+        p.berat = 60.0;
+        p.tinggi = 170.0;
+
+        // Panggil method tampilInfo
         p.tampilInfo();
 
-        // Demonstrasi konstanta final
+        // Tampilkan demonstrasi tentang konstanta final
         System.out.println("\n--- Demonstrasi Konstanta Final ---");
-        System.out.println("Nilai faktor aktivitas: " + Pengguna.FAKTOR_AKTIVITAS);
+        System.out.println("Nilai faktor aktivitas: " + p.faktorAktivitas);
         System.out.println("Faktor aktivitas bersifat final (konstan)");
         System.out.println("Artinya nilai ini tidak bisa diubah setelah diinisialisasi");
-
-        System.out.println("\nJika kita mencoba menulis:");
-        System.out.println("p.FAKTOR_AKTIVITAS = 1.5;");
-        System.out.println("Maka compiler akan menolak dengan error:");
-        System.out.println("'cannot assign a value to final variable FAKTOR_AKTIVITAS'");
-
-        // Baris berikut sengaja dikomentari karena akan menimbulkan error
-        // p.FAKTOR_AKTIVITAS = 1.5; // ERROR
     }
 }
