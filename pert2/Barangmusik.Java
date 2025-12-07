@@ -1,4 +1,4 @@
-    Class BarangMusik {
+class BarangMusik {
     // Deklarasikan variabel/state
     String kode;
     String nama;
