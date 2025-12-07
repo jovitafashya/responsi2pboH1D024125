@@ -7,4 +7,22 @@ Setelah menyelesaikan kode, jawab pertanyaan berikut:
 4. Jika variabel di class Karyawan diubah access modifier-nya menjadi 'private', apa yang akan terjadi pada class Manajer? Bagaimana solusinya?
 5. Mengapa kita perlu menggunakan Inheritance? Apa keuntungan utamanya dibandingkan membuat dua class yang terpisah sama sekali (misal class Karyawan dan class Manajer dibuat terpisah tanpa hubungan)?
 
-Jawaban:
+jawaban: 
+1. Fungsi keyword extends dalam deklarasi class Java
+extends digunakan untuk membuat subclass yang mewarisi atribut dan method dari superclass. Dalam contoh ini, Manajer mewarisi Karyawan, sehingga bisa menggunakan atribut nama, gajiPokok, dan method tampilInfo() dari Karyawan.
+
+2. Perbedaan Method Overloading dan Method Overriding
+Overloading: Terjadi di dalam satu class; method memiliki nama sama tapi berbeda parameter (jumlah atau tipe). Hasilnya berbeda berdasarkan parameter.
+Overriding: Terjadi antara parent dan child; subclass menulis ulang method dari parent dengan tanda @Override untuk menyesuaikan perilaku.
+
+3. Kegunaan keyword super di constructor subclass (Manajer)
+super digunakan untuk memanggil constructor superclass (Karyawan) agar atribut yang diwarisi (nama dan gajiPokok) terinisialisasi dengan benar tanpa menulis ulang kode.
+
+4. Jika variabel di class Karyawan diubah menjadi private
+Manajer tidak bisa langsung mengakses nama dan gajiPokok.
+Solusi: Gunakan method getter di Karyawan untuk mengakses variabel tersebut, misalnya getNama() dan getGajiPokok().
+
+5. Mengapa perlu menggunakan Inheritance? Keuntungannya
+Mengurangi duplikasi kode karena subclass mewarisi atribut dan method dari superclass.
+Mempermudah pemeliharaan program; perubahan di superclass otomatis berlaku untuk subclass.
+Membuat struktur program lebih modular dan logis, serta mendukung konsep polimorfisme.
