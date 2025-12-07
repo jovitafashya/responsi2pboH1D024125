@@ -1,20 +1,54 @@
+// Pengguna.java
 class Pengguna {
-    // Tuliskan state (variabel) yang diperlukan di sini
-    // Jangan lupa tambahkan konstanta faktorAktivitas
-    
+    // Variabel pengguna
+    int umur;           // tahun
+    double berat;       // kg
+    double tinggi;      // cm
+
+    // Konstanta faktor aktivitas
+    public static final double FAKTOR_AKTIVITAS = 1.2;
+
+    // Constructor
+    Pengguna(int umur, double berat, double tinggi) {
+        this.umur = umur;
+        this.berat = berat;
+        this.tinggi = tinggi;
+    }
+
+    // 1. Menghitung BMI
     double hitungBMI() {
-        // Lengkapi method ini
+        double tinggiMeter = tinggi / 100.0;
+        return berat / (tinggiMeter * tinggiMeter);
     }
 
+    // 2. Menampilkan kategori BMI
     void tampilKategori() {
-        // Lengkapi method ini
+        double bmi = hitungBMI();
+        if (bmi < 18.5) {
+            System.out.println("Kategori: Kurus");
+        } else if (bmi < 25) {
+            System.out.println("Kategori: Normal");
+        } else if (bmi < 30) {
+            System.out.println("Kategori: Overweight");
+        } else {
+            System.out.println("Kategori: Obesitas");
+        }
     }
 
+    // 3. Menghitung kebutuhan kalori
     double hitungKalori() {
-        // Lengkapi method ini
+        return berat * FAKTOR_AKTIVITAS * 10;
     }
 
+    // 4. Menampilkan seluruh informasi pengguna
     void tampilInfo() {
-        // Lengkapi method ini
+        System.out.println("=== Informasi Kesehatan Pengguna ===");
+        System.out.println("Umur: " + umur + " tahun");
+        System.out.println("Berat: " + berat + " kg");
+        System.out.println("Tinggi: " + tinggi + " cm");
+        System.out.println("BMI: " + String.format("%.2f", hitungBMI()));
+        tampilKategori();
+        System.out.println("Kebutuhan Kalori: " + (int)hitungKalori() + " kal/hari");
+        System.out.println("====================================");
     }
 }

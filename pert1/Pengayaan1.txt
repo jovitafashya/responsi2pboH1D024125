@@ -6,4 +6,4 @@ Mengapa penting menggunakan konstanta (final variables) dalam suatu kelas? Apa k
 Apa yang terjadi jika kita mencoba mengubah nilai suatu konstanta setelah objek dibuat? Berikan contoh.
 Bagaimana cara mendefinisikan konstanta dalam bahasa Java?
 
-Jawaban ajajshsjshgsjdidnssbns
+Jawaban
